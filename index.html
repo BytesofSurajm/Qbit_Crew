@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibe Coding | AI Workshop Landing Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="js/main.js"></script>
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <style>
+      nav a {
+        position: relative;
+        padding: 0.25rem 0;
+        transition: color 0.3s ease;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        left: 0;
+        bottom: -2px;
+        background: linear-gradient(to right, #a855f7, #ec4899, #facc15);
+        transition: 0.3s ease;
+      }
+      nav a:hover::after {
+        width: 100%;
+      }
+      nav a:hover {
+        color: #facc15;
+      }
+      button:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
+      }
+      img:hover {
+        transform: scale(1.03);
+        transition: transform 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="pt-20 bg-[#0D0B1C] text-white font-[Inter] scroll-smooth">
+    <!-- Navigation -->
+    <nav class="sticky top-0 w-full bg-[#0D0B1C]/80 backdrop-blur border-b border-[#1F2937] z-40 shadow-md">
+      <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+        <a href="#hero" class="flex items-center space-x-2">
+  <img src="images/logo.png" alt="Vibe Coding Logo" class="h-8 w-auto">
+  
+  <span class="text-xl font-bold">Vibe Coding</span>
+</a>
+        <div class="space-x-6 text-sm">
+          <a href="#hero" class="hover:text-purple-400">Home</a>
+          <a href="#who" class="hover:text-purple-400">Who</a>
+          <a href="#get" class="hover:text-purple-400">What You Get</a>
+          <a href="#tools" class="hover:text-purple-400">Tools</a>
+          <a href="#learn" class="hover:text-purple-400">Learn</a>
+          <a href="#agenda" class="hover:text-purple-400">Agenda</a>
+          <a href="#faq" class="hover:text-purple-400">FAQ</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="text-center py-28 px-6" id="hero">
+      <p class="text-sm font-medium text-[#94A3B8]">📅 VIBE CODING | 2-Day AI Workshop</p>
+      <h1 class="text-5xl font-extrabold text-gradient bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 inline-block text-transparent bg-clip-text mt-4">
+        No Code?<br />No Problem.
+      </h1>
+      <p class="mt-4 text-[#CBD5E1] text-lg">Build your first AI-powered MVP online & offline</p>
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm text-center">
+        <div class="bg-[#1E1B3A] p-4 rounded-lg border border-[#4C1D95]">
+          <p class="text-white font-bold">📍 Venue</p>
+          <p class="text-[#A5B4FC]">Starbucks, HSR Layout</p>
+        </div>
+        <div class="bg-[#1E1B3A] p-4 rounded-lg border border-[#C026D3]">
+          <p class="text-white font-bold">🗓️ When</p>
+          <p class="text-[#FBCFE8]">31 May (Online) + 1 June (Offline)</p>
+        </div>
+        <div class="bg-[#1E1B3A] p-4 rounded-lg border border-[#FACC15]">
+          <p class="text-white font-bold">🎯 What</p>
+          <p class="text-[#FDE68A]">AI + No Code + 1 MVP</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-center mt-10 gap-4">
+        <button class="bg-[#6366F1] hover:bg-[#4F46E5] text-white font-semibold px-6 py-2 rounded-xl">Register Now</button>
+        <button class="border border-[#94A3B8] text-[#94A3B8] px-6 py-2 rounded-xl">Download Agenda</button>
+        <button class="underline text-[#94A3B8]">Call a Qbit Crew Member</button>
+      </div>
+    </section>
+
+    <!-- Who Is It For -->
+    <section id="who" class="text-center py-16 px-6">
+      <h2 class="text-3xl font-bold mb-4">Who Is It For?</h2>
+      <p class="text-[#94A3B8] max-w-xl mx-auto">Gen Z learners, startup founders, digital creators, coders and non-coders — if you're curious, you're in.</p>
+    </section>
+
+    <!-- What You'll Get -->
+    <section id="get" class="text-center py-16 px-6">
+      <h2 class="text-3xl font-bold mb-4">What You’ll Get</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="border border-[#6D28D9] p-4 rounded-xl">
+          <p class="font-semibold text-lg">User Registration</p>
+          <p class="text-sm text-[#94A3B8]">With authentication</p>
+        </div>
+        <div class="border border-[#9333EA] p-4 rounded-xl">
+          <p class="font-semibold text-lg">Form Creation</p>
+          <p class="text-sm text-[#94A3B8]">No-code platform</p>
+        </div>
+        <div class="border border-[#EAB308] p-4 rounded-xl">
+          <p class="font-semibold text-lg">Project Tracking</p>
+          <p class="text-sm text-[#94A3B8]">Dynamic dashboard</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools You'll Use -->
+    <section id="tools" class="text-center py-16 px-6">
+      <h2 class="text-3xl font-bold mb-8">Tools You’ll Use</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-[#1E1B3A] p-4 rounded-xl">Canva</div>
+        <div class="bg-[#1E1B3A] p-4 rounded-xl">ChatGPT</div>
+        <div class="bg-[#1E1B3A] p-4 rounded-xl">Claude</div>
+        <div class="bg-[#1E1B3A] p-4 rounded-xl">Replit</div>
+        <div class="bg-[#1E1B3A] p-4 rounded-xl">Vercel</div>
+        <div class="bg-[#1E1B3A] p-4 rounded-xl">n8n</div>
+        <div class="bg-[#1E1B3A] p-4 rounded-xl">HuggingFace</div>
+        <div class="bg-[#1E1B3A] p-4 rounded-xl">zMo</div>
+      </div>
+    </section>
+
+    <!-- What You'll Learn -->
+    <section id="learn" class="text-center py-16 px-6">
+      <h2 class="text-3xl font-bold mb-4">What You’ll Learn</h2>
+      <p class="text-[#94A3B8] max-w-2xl mx-auto">Prompt engineering, no-code logic workflows, deploying tools with APIs, AI automation, and launching a real MVP — all hands-on.</p>
+    </section>
+
+    <!-- Agenda -->
+    <section id="agenda" class="text-center py-16 px-6">
+      <h2 class="text-3xl font-bold mb-4">Vibe Sprint Agenda</h2>
+      <ul class="max-w-2xl mx-auto text-left space-y-4 text-[#CBD5E1]">
+        <li><strong>Day 1:</strong> Online Workshop (3 Hours)</li>
+        <li><strong>Day 2:</strong> Offline Hackathon + Showcase (3 Hours)</li>
+        <li><strong>Output:</strong> MVP + Tools + Certificate + Connections</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+
+    <!-- Registration Form -->
+    <section id="register" class="text-center py-16 px-6 bg-[#1E1B3A]">
+      <h2 class="text-3xl font-bold mb-6 text-white">Register for Vibe Coding</h2>
+      <form id="registrationForm" class="max-w-xl mx-auto grid grid-cols-1 gap-6 text-left">
+        <input type="text" name="name" placeholder="Your Full Name" class="p-3 rounded bg-[#0F172A] border border-[#334155] placeholder:text-[#94A3B8]" required>
+        <input type="email" name="email" placeholder="Email Address" class="p-3 rounded bg-[#0F172A] border border-[#334155] placeholder:text-[#94A3B8]" required>
+        <input type="tel" name="phone" placeholder="Phone Number" class="p-3 rounded bg-[#0F172A] border border-[#334155] placeholder:text-[#94A3B8]" required>
+        <select name="participation" class="p-3 rounded bg-[#0F172A] border border-[#334155] text-[#94A3B8]" required>
+          <option disabled selected>Select Participation Mode</option>
+          <option value="online">Online Only</option>
+          <option value="offline">Offline Only</option>
+          <option value="both">Both Days</option>
+        </select>
+        <textarea name="message" placeholder="Any message or query?" rows="4" class="p-3 rounded bg-[#0F172A] border border-[#334155] placeholder:text-[#94A3B8]"></textarea>
+        <button type="submit" class="bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 text-black font-semibold py-3 rounded-xl hover:opacity-90">Submit Registration</button>
+      </form>
+      <div id="successMessage" class="mt-6 hidden text-green-400 font-semibold transition-opacity duration-500">Thank you! Your registration was successful. 🎉</div>
+    </section>
+
+    <!-- FAQ -->
+    <!-- [existing FAQ section remains unchanged] -->
+
+    <script>
+  const form = document.getElementById('registrationForm');
+  const successMessage = document.getElementById('successMessage');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      participation: form.participation.value,
+      message: form.message.value
+    };
+
+    try {
+      const response = await fetch('PASTE_YOUR_WEB_APP_URL_HERE', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' }
+      });
+
+      if (response.ok) {
+        successMessage.classList.remove('hidden');
+        successMessage.classList.add('opacity-100');
+        form.reset();
+        setTimeout(() => successMessage.classList.add('hidden'), 5000);
+      } else {
+        alert('Error: Could not submit the form. Try again.');
+      }
+    } catch (error) {
+      alert('Failed to connect. Please check your connection or try later.');
+    }
+  });
+// Auto-hide/show navbar and background fade on scroll
+let lastScroll = 0;
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll <= 0) {
+    nav.style.transform = "translateY(0)";
+    return;
+  }
+
+  if (currentScroll > lastScroll) {
+    nav.style.transform = "translateY(-100%)";
+  } else {
+    nav.style.transform = "translateY(0)";
+  }
+
+  lastScroll = currentScroll;
+
+  // Smooth background transition effect
+  if (currentScroll > 30) {
+    nav.classList.add("bg-opacity-95", "backdrop-blur", "shadow-lg");
+  } else {
+    nav.classList.remove("bg-opacity-95", "shadow-lg");
+  }
+});
+</script>
+</body>
+</html>

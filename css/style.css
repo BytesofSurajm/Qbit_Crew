@@ -1,0 +1,29 @@
+nav a {
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -2px;
+  background: linear-gradient(to right, #a855f7, #ec4899, #facc15);
+  transition: 0.3s ease;
+}
+nav a:hover::after {
+  width: 100%;
+}
+nav a:hover {
+  color: #facc15;
+}
+button:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+img:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease-in-out;
+}
