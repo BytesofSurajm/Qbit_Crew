@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>No Code Event</title>
+  <title>Qbit Crew - Vibe Coding</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
     body {
@@ -28,9 +31,10 @@
       color: #000;
       font-size: 22px;
       font-family: 'Playfair Display', serif;
+      margin-left: 20px;
     }
 
-    /* 🧭 Compact Hero Section */
+    /* Hero Section */
     .vibe-hero {
       background: #000;
       color: white;
@@ -53,7 +57,6 @@
     .vibe-top-text {
       font-size: 16px;
       margin-bottom: 4px;
-      font-family: 'EB Garamond', serif;
     }
 
     .vibe-top-text .vibe-label {
@@ -66,7 +69,6 @@
       font-size: 36px;
       font-weight: bold;
       color: #c9f25d;
-      font-family: 'Playfair Display', serif;
     }
 
     .countdown-wrapper {
@@ -81,7 +83,6 @@
       font-size: 28px;
       color: #c9f25d;
       letter-spacing: 2px;
-      font-family: 'EB Garamond', serif;
       font-weight: bold;
     }
 
@@ -123,7 +124,6 @@
       100% { transform: scale(1); }
     }
 
-    /* 📦 Main Content */
     .container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -136,39 +136,31 @@
     .card {
       border-radius: 100px;
       padding: 40px;
-      color: #000;
       box-sizing: border-box;
     }
 
-    .pink {
-      background-color: #fddad3;
+    .pink { background-color: #fddad3; }
+    .green { background-color: #c9f25d; }
+    .blue { background-color: #004cff; color: white; text-align: center; }
+    .orange { background-color: #e4b281; }
+
+    .highlight { color: #004cff; }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 10px;
+      border-radius: 100px;
     }
 
-    .pink h1, .pink h2 {
+    .event-title h2, .card h2, .card h1 {
       font-family: 'Playfair Display', serif;
       text-align: center;
     }
 
-    .pink p {
-      font-size: 24px;
+    .card p {
+      font-size: 20px;
       text-align: center;
       font-family: 'EB Garamond', serif;
-    }
-
-    .green {
-      background-color: #c9f25d;
-    }
-
-    .blue {
-      background-color: #004cff;
-      color: white;
-      text-align: center;
-    }
-
-    .blue h2 {
-      font-size: 40px;
-      margin-bottom: 40px;
-      font-family: 'Playfair Display', serif;
     }
 
     .icons-section {
@@ -184,71 +176,98 @@
       object-fit: contain;
     }
 
-    .orange {
-      background-color: #e4b281;
-    }
-
-    .highlight {
-      color: #004cff;
-    }
-
-    .logo {
-      width: 120px;
-      margin-bottom: 10px;
-      border-radius: 100px;
-    }
-
-    .event-title h2 {
-      font-size: 34px;
-      color: #000;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .event-details {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .event-details p {
-      font-size: 24px;
-      font-family: 'EB Garamond', serif;
-    }
-
-    .orange h1 {
-      font-size: 38px;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .image-button-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
     .register-button {
-      display: block;
       background-color: #004cff;
       color: white;
-      padding: 16px 0;
+      padding: 16px;
       text-align: center;
       border: none;
       border-radius: 8px;
       font-size: 20px;
-      font-weight: 500;
       width: 300px;
       margin-top: 20px;
       text-decoration: none;
       font-family: 'Playfair Display', serif;
     }
 
-    .register-button:hover {
-      background-color: #0033cc;
+    .register-button:hover { background-color: #0033cc; cursor: pointer; }
+
+    /* Info Sections (About, Events, Contact) */
+    .info-section {
+      padding: 80px 20px;
+      background: #f9f9f9;
+      border-top: 4px solid #c9f25d;
+      font-family: 'EB Garamond', serif;
+      text-align: center;
+    }
+
+    .info-section.alt { background: #eef7e3; }
+
+    .info-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .info-container h2 {
+      font-size: 36px;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 20px;
+    }
+
+    .info-container p {
+      font-size: 20px;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .info-container a { color: #004cff; text-decoration: none; }
+
+    /* Contact Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    form input, form textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    form button {
+      background: #004cff;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 6px;
       cursor: pointer;
     }
 
-    /* 📱 Responsive */
+    form button:hover { background: #0033cc; }
+
+    /* Scroll-to-Top Button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      background-color: #004cff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      display: none;
+    }
+
+    #scrollTopBtn:hover { background-color: #0033cc; }
+
+    /* Responsive */
     @media (max-width: 768px) {
       .container {
         grid-template-columns: 1fr;
@@ -256,47 +275,27 @@
         gap: 24px;
       }
 
-      .card {
-        border-radius: 40px;
-        padding: 30px 20px;
-      }
-
-      #countdown {
-        font-size: 24px;
-      }
-
-      .just-vibes {
-        font-size: 16px;
-      }
-
-      .vibe-top-text .vibe-48 {
-        font-size: 28px;
-      }
-
-      .vibe-bottom-text {
-        flex-direction: column;
-        font-size: 14px;
-        gap: 6px;
-      }
-
-      .countdown-wrapper {
-        padding: 10px 20px;
-      }
+      .vibe-top-text .vibe-48 { font-size: 28px; }
+      #countdown { font-size: 24px; }
+      .just-vibes { font-size: 16px; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- 🧭 Navigation -->
+  <!-- 🧭 Navbar -->
   <header class="site-header">
     <nav>
       <a href="#" class="nav-link">Qbit Crew</a>
       <a href="#" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About Us</a>
+      <a href="#events" class="nav-link">Upcoming Events</a>
+      <a href="#contact" class="nav-link">Contact Us</a>
     </nav>
   </header>
 
-  <!-- 🎯 Compact Hero Section -->
+  <!-- 🎯 Hero -->
   <section class="vibe-hero">
     <div class="vibe-hero-inner">
       <p class="vibe-top-text">
@@ -317,19 +316,17 @@
 
   <!-- 💻 Main Content -->
   <div class="container">
-    <div class="card pink">
-      <h1><span class="highlight">No Code?</span> No Problem</h1><br>
-      <h2>Vibe Coding</h2><br>
+    <div class="card pink" data-aos="fade-up">
+      <h1><span class="highlight">No Code?</span> No Problem</h1>
+      <h2>Vibe Coding</h2>
       <p>Build your first AI-powered MVP —</p>
       <p>online & offline</p>
     </div>
 
-    <div class="card green">
-      <div class="logo-title">
-        <img src="c2.jpeg" alt="Starbucks Logo" class="logo">
-        <div class="event-title">
-          <h2>COFFEE & CODE<br>@ STARBUCKS</h2>
-        </div>
+    <div class="card green" data-aos="fade-up">
+      <img src="c2.jpeg" alt="Starbucks Logo" class="logo" />
+      <div class="event-title">
+        <h2>COFFEE & CODE<br>@ STARBUCKS</h2>
       </div>
       <div class="event-details">
         <p>Vittal Mallya Road, Bangalore</p>
@@ -337,24 +334,63 @@
       </div>
     </div>
 
-    <div class="card blue">
+    <div class="card blue" data-aos="fade-up">
       <h2>WHAT YOU'LL GET</h2>
       <div class="icons-section">
         <img src="c33.png" alt="Swag Kit & Certificate" class="get-icons-image">
       </div>
     </div>
 
-    <div class="card orange">
+    <div class="card orange" data-aos="fade-up">
       <h1>Let's jam with the right vibe</h1>
       <div class="image-button-wrapper">
         <img src="c44.png" alt="Team Collaboration" class="get-icons-image" />
-        <a href="https://forms.gle/V8jGkDEzAPScRcSL8" class="register-button">Register Here</a>
+        <a href="https://docs.google.com/forms/d/17tSWHThPbJTWJf9OT1YAsvS2isdPQq1YamuNHcViz7c/edit" class="register-button">Register Here</a>
       </div>
     </div>
   </div>
 
-  <!-- ⏳ Countdown Script -->
+  <!-- 👥 About Us -->
+  <section id="about" class="info-section" data-aos="fade-up">
+    <div class="info-container">
+      <h2>About Us</h2>
+      <p><strong>Qbit Crew</strong> is a Bangalore-based next-gen learning and networking community made for the curious, the creative, and the ambitious.</p>
+      <p>From AI-powered coding sprints to business jam sessions, we run events that are fun, practical, and real-world focused. We believe in learning by building — together.</p>
+      <p>Our motto: <em>Learn Smart. Build Bold. Connect Deep.</em></p>
+    </div>
+  </section>
+
+  <!-- 📅 Upcoming Events -->
+  <section id="events" class="info-section alt" data-aos="fade-up">
+    <div class="info-container">
+      <h2>Upcoming Events</h2>
+      <p><strong>📍 Vibe Coding – Bangalore</strong><br>May 31 & June 1, 2025 @ Starbucks, Vittal Mallya Road</p>
+      <p><strong>🧠 Smart Lawyering Workshop</strong><br>June 10, 2025 – Hybrid Mode (Live + Online)</p>
+      <p>More events dropping soon... stay tuned 👀</p>
+    </div>
+  </section>
+
+  <!-- 📩 Contact Us -->
+  <section id="contact" class="info-section" data-aos="fade-up">
+    <div class="info-container">
+      <h2>Contact Us</h2>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 🔝 Scroll to Top -->
+  <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">↑</button>
+
+  <!-- JS: Countdown, Scroll, AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
+    AOS.init({ duration: 1000, once: true });
+
     const countdown = () => {
       const end = new Date("May 31, 2025 18:00:00").getTime();
       const now = new Date().getTime();
@@ -376,7 +412,15 @@
 
     countdown();
     setInterval(countdown, 1000);
-  </script>
 
+    // Scroll-to-top logic
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = () => {
+      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
 </body>
 </html>
